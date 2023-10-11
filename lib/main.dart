@@ -25,7 +25,7 @@ class UserProfilePage extends StatelessWidget {
   Widget _buildCoverImage(Size screenSize) {
     return Container(
       height: screenSize.height / 2.6,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage('assets/bg.jpg'),
           fit: BoxFit.cover,
@@ -40,7 +40,7 @@ class UserProfilePage extends StatelessWidget {
         width: 140.0,
         height: 140.0,
         decoration: BoxDecoration(
-          image: DecorationImage(
+          image: const DecorationImage(
             image: AssetImage('assets/profile.jpg'),
             fit: BoxFit.cover,
           ),
@@ -55,7 +55,7 @@ class UserProfilePage extends StatelessWidget {
   }
 
   Widget _buildFullName() {
-    TextStyle _nameTextStyle = TextStyle(
+    TextStyle _nameTextStyle = const TextStyle(
       fontFamily: 'Roboto',
       color: Color.fromARGB(255, 233, 18, 101),
       fontSize: 28.0,
@@ -70,14 +70,14 @@ class UserProfilePage extends StatelessWidget {
 
   Widget _buildStatus(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 100.0),
+      padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 100.0),
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
         borderRadius: BorderRadius.circular(4.0),
       ),
       child: Text(
         _status,
-        style: TextStyle(
+        style: const TextStyle(
           fontFamily: 'Spectral',
           color: Colors.black,
           fontSize: 20.0,
@@ -88,14 +88,14 @@ class UserProfilePage extends StatelessWidget {
   }
 
   Widget _buildStatItem(String label, String count) {
-    TextStyle _statLabelTextStyle = TextStyle(
+    TextStyle _statLabelTextStyle = const TextStyle(
       fontFamily: 'Roboto',
       color: Color.fromARGB(255, 31, 80, 214),
       fontSize: 24.0,
       fontWeight: FontWeight.bold,
     );
 
-    TextStyle _statCountTextStyle = TextStyle(
+    TextStyle _statCountTextStyle = const TextStyle(
       color: Color.fromARGB(255, 233, 18, 101),
       fontSize: 12.0,
       fontWeight: FontWeight.bold,
@@ -119,8 +119,8 @@ class UserProfilePage extends StatelessWidget {
   Widget _buildStatContainer() {
     return Container(
       height: 60.0,
-      margin: EdgeInsets.only(top: 8.0),
-      decoration: BoxDecoration(
+      margin: const EdgeInsets.only(top: 8.0),
+      decoration: const BoxDecoration(
         color: Color(0xFFEFF4F7),
       ),
       child: Row(
@@ -135,7 +135,7 @@ class UserProfilePage extends StatelessWidget {
   }
 
   Widget _buildBio(BuildContext context) {
-    TextStyle bioTextStyle = TextStyle(
+    TextStyle bioTextStyle = const TextStyle(
       fontFamily: 'Spectral',
       fontWeight: FontWeight.w400,
       //try changing weight to w500 if not thin
@@ -146,7 +146,7 @@ class UserProfilePage extends StatelessWidget {
 
     return Container(
       color: Theme.of(context).scaffoldBackgroundColor,
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Text(
         _bio,
         textAlign: TextAlign.center,
@@ -160,24 +160,24 @@ class UserProfilePage extends StatelessWidget {
       width: screenSize.width / 1.6,
       height: 2.0,
       color: Colors.black54,
-      margin: EdgeInsets.only(top: 4.0),
+      margin: const EdgeInsets.only(top: 4.0),
     );
   }
 
   Widget _buildGetInTouch(BuildContext context) {
     return Container(
       color: Theme.of(context).scaffoldBackgroundColor,
-      padding: EdgeInsets.only(top: 8.0),
+      padding: const EdgeInsets.only(top: 8.0),
       child: Text(
         "Get in Touch with ${_fullName.split(" ")[0]},",
-        style: TextStyle(fontFamily: 'Roboto', fontSize: 16.0),
+        style: const TextStyle(fontFamily: 'Roboto', fontSize: 16.0),
       ),
     );
   }
 
   Widget _buildButtons() {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 200.0),
+      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 200.0),
       child: Row(
         children: <Widget>[
           Expanded(
@@ -187,8 +187,8 @@ class UserProfilePage extends StatelessWidget {
                 height: 40.0,
                 decoration: BoxDecoration(
                     border: Border.all(),
-                    color: Color.fromARGB(230, 224, 44, 155)),
-                child: Center(
+                    color: const Color.fromARGB(230, 224, 44, 155)),
+                child: const Center(
                   child: Text(
                     "FOLLOW",
                     style: TextStyle(
@@ -200,16 +200,17 @@ class UserProfilePage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: 10.0),
+          const SizedBox(width: 10.0),
           Expanded(
             child: InkWell(
+              // ignore: avoid_print
               onTap: () => print("Message"),
               child: Container(
                 height: 40.0,
                 decoration: BoxDecoration(
                   border: Border.all(),
                 ),
-                child: Center(
+                child: const Center(
                   child: Padding(
                     padding: EdgeInsets.all(10.0),
                     child: Text(
@@ -244,9 +245,9 @@ class UserProfilePage extends StatelessWidget {
                   _buildStatContainer(),
                   _buildBio(context),
                   _buildSeparator(screenSize),
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   _buildGetInTouch(context),
-                  SizedBox(height: 8.0),
+                  const SizedBox(height: 8.0),
                   _buildButtons(),
                 ],
               ),
